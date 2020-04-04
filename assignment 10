@@ -1,0 +1,22 @@
+def remove_punctuation(string):
+  letters = 'abcdefghijklmnopqrstuvwxyz'
+  new_string = ""
+  for x in string.lower().strip():
+    if x in letters:
+      new_string.join(x)
+  return new_string
+
+def find_palindrome(string):
+  if len(string) == 0 or len(string) == 1:
+    return True
+  first = string[0]
+  last = string[-1]
+  if first == last:
+    return find_palindrome(string[1:-1])
+  else:
+    return False
+
+if __name__ == "__main__":
+  string = input("Enter a string").lower().strip()
+  no_punc_string = remove_punctuation(string)
+  print(find_palindrome(no_punc_string))
